@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/magicgaming/static/css/main.db798329.css",
+    "main.js": "/magicgaming/static/js/main.e9432ca9.js",
+    "static/js/787.8f0c6bbf.chunk.js": "/magicgaming/static/js/787.8f0c6bbf.chunk.js",
+    "index.html": "/magicgaming/index.html",
+    "main.db798329.css.map": "/magicgaming/static/css/main.db798329.css.map",
+    "main.e9432ca9.js.map": "/magicgaming/static/js/main.e9432ca9.js.map",
+    "787.8f0c6bbf.chunk.js.map": "/magicgaming/static/js/787.8f0c6bbf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db798329.css",
+    "static/js/main.e9432ca9.js"
+  ]
+}
