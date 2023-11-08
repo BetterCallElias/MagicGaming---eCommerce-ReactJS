@@ -10,13 +10,20 @@ import AddCartButton from "./Cards/AddCartButton";
 
 const DetailsItem = () => {
     const [ datos, setDatos ] = useState([]);
-    const { id } = useParams();
-    
+    let {idItem} = useParams();
+
+
     useEffect(() => {
-        fetchSimulation(productos.filter(filter => filter.type === id), 2000)
-        .then(resp => setDatos(resp))
-        .catch(error => console.log(error))
-    }, [id])
+        if(idItem === undefined){
+            fetchSimulation(productos, 2000)
+            .then(resp => setDatos(resp))
+            .catch(error => console.log(error))
+        } else{
+            fetchSimulation(productos.filter(filter => filter.type === idItem), 3000)
+            .then(resp => setDatos(resp))
+            .catch(error => console.log(error))
+        }
+    }, [idItem])
     
     return(
         <div className="detailsItem">
@@ -24,27 +31,28 @@ const DetailsItem = () => {
                 datos.map( items => (
                     <>
                         <div className="containerLeft">
-                            <Image
-                                imagen={datos.image}
+                            <Image 
+                                imagen={items.image}
                             />
-                        </div>
+                        </div>  
 
-                        <div className="containerRight">
-                                <Description
-                                    title= {datos.title}
-                                    parrafo= {datos.description}
-                                    cantidad= {datos.stock}
-                                    precio= {datos.price}
+                        <div className="containerRigth">
+                                <Description 
+                                    title={items.title}
+                                    parrafo={items.description}
+                                    cantidad={items.stock}
+                                    precio={items.price}
                                 />
-                            <div>
-                                <AddCartButton
-                                    txt="Agregar al carrito"
-                                />
-
+                                
+                            <div className="buttons">
+                        
+                                    <AddCartButton
+                                        txt="Agregar al carrito"
+                                    />
                             </div>
                         </div>
                     </>
-            ))
+                ))
             }
         </div>
     )
