@@ -11,7 +11,6 @@
     height: calc(100vh - 60px);
 }
 
-/* containerLeft */
 .detailsItem .containerLeft {
     width: 35%;
     display: flex;
@@ -30,7 +29,6 @@
     width: 100%;
 }
 
-/* containerRigth */
 .detailsItem .containerRight {
     width: 35%;
     display: flex;
@@ -54,14 +52,11 @@
     
 }
 
-
-/* title */
 .detailsItem .containerRight .cardDescription .title {
     font-size: 45px;
     margin: 10px 0;
 }
 
-/* description */
 .detailsItem .containerRight .cardDescription .description {
     display: flex;
     flex-direction: column;
@@ -79,7 +74,6 @@
     margin: 10px 0;
 }
 
-/* stock */
 .detailsItem .containerRight .cardDescription .cant{
     font-size: 18px;
     margin: 10px 0;
