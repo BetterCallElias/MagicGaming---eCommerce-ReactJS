@@ -1,5 +1,5 @@
 
-const Bienvenida = () => {
+const ItemListContainer = () => {
     return (
       <div>
         <Welcome text={{ greeting: '¡Bienvenidos a Magic Gaming!' }} />
@@ -11,4 +11,4 @@ const Bienvenida = () => {
     return <h1 style={{ color: '#3A4454' }}>{text.greeting}</h1>;
   };
   
-  export default Bienvenida;
+  export default ItemListContainer;

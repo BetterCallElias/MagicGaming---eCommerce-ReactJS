@@ -3,19 +3,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">Magic Gaming</Navbar.Brand>
+        <Navbar.Brand as={Link} to= "/">Magic Gaming</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#Inicio">Inicio</Nav.Link>
+            <Nav.Link as={Link} to= "/">Inicio</Nav.Link>
             <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#Componentes">Componentes</NavDropdown.Item>
-              <NavDropdown.Item href="#Accesorios">Accesorios</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="category/cpusygpus">CPUs y GPUs</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="category/componentes">Componentes</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="category/accesorios">Accesorios</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#Carrito">
                 <CartWidget></CartWidget>

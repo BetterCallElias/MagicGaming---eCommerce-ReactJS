@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cardItems {
+    border: 1px solid black;
+    height: 430px;
+    width: 350px;
+    padding: 8px;
+    margin: 16px;
+}
+
+.cardItems .cardImage {
+    border: 2px solid lightblue;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.cardItems .cardImage {
+    width: 100%;
+}
+
+.cardDescription {
+    border: 2px solid lightblue;
+}
+
+.cardDescription .title {
+    font-size: 25px;
+}
+
+.cardDescription .description {
+    display: none;
+}
+
+.cardDescription .quantity {
+    color: lightblue;
+    font-size: 20px;
+}
+
+.buttons {
+    border: 3px solid lightgray;
+    margin-top: 4px;
+}
+
+.buttons #detalles {
+    width: 75%;
+}
+
+.buttons #addToCart {
+    width: 25%;
+}
