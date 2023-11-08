@@ -8,11 +8,11 @@ const Description = (props) => {
             <div className="description">
                 <span className="descriptionTitle">Descripción:</span>
                 <p className="textoDescripcion"></p>
-                    {props.parrafo}
+                    {props.description}
             </div>
 
             <p className="quantity">
-                Cantidad: {props.quantity} unidades disponibles
+                Cantidad: {props.stock} unidades disponibles
 
             </p>
 

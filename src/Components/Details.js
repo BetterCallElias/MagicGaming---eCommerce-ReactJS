@@ -9,53 +9,54 @@ import AddCartButton from "./Cards/AddCartButton";
 
 
 const DetailsItem = () => {
-    const [ datos, setDatos ] = useState([]);
-    let {idItem} = useParams();
+    const [ item, setItem ] = useState();
+    let {idItem} = useParams(); 
+    function filterItem (idItem, data){
+        let selectedItem = data.filter(product => product.id == idItem)
+        return (selectedItem ? selectedItem[0]: null)
+    }
 
 
     useEffect(() => {
-        if(idItem === undefined){
+        if(idItem){
             fetchSimulation(productos, 2000)
-            .then(resp => setDatos(resp))
+            .then(resp => setItem(filterItem(idItem, resp)))
             .catch(error => console.log(error))
-        } else{
-            fetchSimulation(productos.filter(filter => filter.type === idItem), 3000)
-            .then(resp => setDatos(resp))
-            .catch(error => console.log(error))
-        }
-    }, [idItem])
+        } 
     
+        
+     }, [idItem])
+     console.log(item)
     return(
+
+        item ? (
         <div className="detailsItem">
-            {
-                datos.map( items => (
-                    <>
                         <div className="containerLeft">
                             <Image 
-                                imagen={items.image}
+                                image={item.image}
                             />
                         </div>  
 
-                        <div className="containerRigth">
+                        <div className="containerRight">
                                 <Description 
-                                    title={items.title}
-                                    parrafo={items.description}
-                                    cantidad={items.stock}
-                                    precio={items.price}
+                                    title={item.title}
+                                    description={item.description}
+                                    stock={item.stock}
+                                    price={item.price}
                                 />
                                 
-                            <div className="buttons">
+                            <div className="buttonsDetails">
                         
                                     <AddCartButton
                                         txt="Agregar al carrito"
                                     />
                             </div>
                         </div>
-                    </>
-                ))
-            }
-        </div>
+        </div>)
+        : (<div>Loading</div>)
     )
 }
+
+
 
 export default DetailsItem;

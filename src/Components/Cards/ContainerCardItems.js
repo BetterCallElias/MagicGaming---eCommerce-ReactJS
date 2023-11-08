@@ -27,10 +27,10 @@ const ContainerCardItems = () => {
             {
                 datos.map( product => (
                     <CardItem
-                    key={product.id}
+                    id={product.id}
                     image={product.image}
                     title={product.title}
-                    quantity={product.cantidad}
+                    stock={product.stock}
                     price={product.price}
                     />
                 ))
